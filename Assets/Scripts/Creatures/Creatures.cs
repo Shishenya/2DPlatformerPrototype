@@ -12,6 +12,7 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public MoveEvent moveEvent;
 
+    public CreatureDetailsSO creatureDetails;
     public MovementDetailsSO movementDetails;
 
 
@@ -26,7 +27,7 @@ public abstract class Creatures : MonoBehaviour
     /// <summary>
     /// Инициализация существа
     /// </summary>
-    public void InitCreatures()
+    public virtual void InitCreatures()
     {
 
     }

@@ -27,6 +27,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   idleEvent: {fileID: 0}
   moveEvent: {fileID: 0}
+  creatureDetails: {fileID: 11400000, guid: e528e3b455b03e240aa4114a75fbda75, type: 2}
   movementDetails: {fileID: 11400000, guid: e4d17bea097351942917dadaceaedc69, type: 2}
 --- !u!1001 &5047984001177565397
 PrefabInstance:
