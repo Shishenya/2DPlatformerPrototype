@@ -13,5 +13,6 @@ public static class Settings
 
     #region Default parameters
     public static float defaultSpeedCreature = 1f;
+    public static Vector2 startPositionPlayer = new Vector2(0f, 3f);
     #endregion
 }

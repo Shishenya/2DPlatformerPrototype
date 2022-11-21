@@ -6,11 +6,10 @@ public abstract class BaseFactory : MonoBehaviour
 {
     [SerializeField] private GameObject _prefab;
 
-    public GameObject Create()
+    public virtual GameObject Create(Vector2 positionCreate)
     {
-        Vector3 position = new Vector3(2f,3f,0f);
-
-        return Instantiate(_prefab, position, Quaternion.identity);
-        
+        GameObject go = Instantiate(_prefab, positionCreate, Quaternion.identity);
+        // go.SetActive(false);
+        return go;
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimateCreature : MonoBehaviour
@@ -12,12 +14,8 @@ public class AnimateCreature : MonoBehaviour
 
     private void OnEnable()
     {
-        // событие спокойствия
-        _creature.idleEvent.OnIdle += IdleEvent_OnIdle;
-
-        // Событие ходьбы
-        _creature.moveEvent.OnMove += MoveEvent_OnMove;
-
+        // Регистрируем евенты
+        StartCoroutine(EventsRegister());
     }
 
     private void OnDisable()
@@ -80,7 +78,20 @@ public class AnimateCreature : MonoBehaviour
 
         ClearAim();
 
-        if (aimDirection==AimDirection.left) _creature.animator.SetBool(Settings.aimLeft, true);
+        if (aimDirection == AimDirection.left) _creature.animator.SetBool(Settings.aimLeft, true);
         if (aimDirection == AimDirection.right) _creature.animator.SetBool(Settings.aimRight, true);
     }
+
+    private IEnumerator EventsRegister ()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        _creature.idleEvent.OnIdle += IdleEvent_OnIdle;
+
+        _creature.moveEvent.OnMove += MoveEvent_OnMove;
+
+        yield return null;
+    }
+
+
 }
