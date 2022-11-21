@@ -6,11 +6,12 @@ public class PlayerContoller : MonoBehaviour
 {
 
     private Creatures _creatures;
-    private float _testSpeed = 5f;
+    private float _speed = 5f;
 
     private void Awake()
     {
         _creatures = GetComponent<Creatures>();
+        _speed = _creatures.movementDetails.speed;
     }
 
     private void Update()
@@ -45,7 +46,7 @@ public class PlayerContoller : MonoBehaviour
                 aimDirection = AimDirection.left;
             }
 
-            _creatures.moveEvent.CallOnMoveEvent(aimDirection, _testSpeed);
+            _creatures.moveEvent.CallOnMoveEvent(aimDirection, _speed);
         }
 
     }

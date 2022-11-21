@@ -1,42 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &87356944551087807
+--- !u!114 &6407663540433543148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928711586029800532}
+  m_GameObject: {fileID: 210684814854996624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c554584d2e02fbc459ad58dacc247280, type: 3}
+  m_Script: {fileID: 11500000, guid: fb38b026cc3456b44ab4426db0db4cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   idleEvent: {fileID: 0}
   moveEvent: {fileID: 0}
---- !u!114 &-7193690866768727378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928711586029800532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a4a55702b96a794691afca2345105fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &5047984001177565397
+  movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
+--- !u!1001 &6784289086870386193
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567536048183822539, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5905681027756182028, guid: 10e670b2d15fa6a45955ca3241e03ace, type: 3}
     - target: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Mage
       objectReference: {fileID: 0}
     - target: {fileID: 7498918559002667877, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_RootOrder
@@ -82,10 +87,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7851049158960782108, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7aea9961a735ae8409cc0ef54907368d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
---- !u!1 &1928711586029800532 stripped
+--- !u!1 &210684814854996624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
-  m_PrefabInstance: {fileID: 5047984001177565397}
+  m_PrefabInstance: {fileID: 6784289086870386193}
   m_PrefabAsset: {fileID: 0}

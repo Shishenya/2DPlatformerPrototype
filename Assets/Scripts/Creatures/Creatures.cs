@@ -12,6 +12,8 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public MoveEvent moveEvent;
 
+    public MovementDetailsSO movementDetails;
+
 
     protected virtual void Awake()
     {

@@ -1,9 +1,13 @@
 using UnityEngine;
 
+[RequireComponent(typeof(MoveEvent))]
+[RequireComponent(typeof(Rigidbody2D))]
+[DisallowMultipleComponent]
 public class Move : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     private MoveEvent _moveEvent;
+
 
     private void Awake()
     {

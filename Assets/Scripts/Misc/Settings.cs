@@ -10,4 +10,8 @@ public static class Settings
     public static int isIdle = Animator.StringToHash("isIdle");
     public static int isWalk = Animator.StringToHash("isWalk");
     #endregion
+
+    #region Default parameters
+    public static float defaultSpeedCreature = 1f;
+    #endregion
 }
