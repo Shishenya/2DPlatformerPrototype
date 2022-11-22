@@ -26,14 +26,20 @@ public class GameManager : Singleton<GameManager>
     {
 
         base.Awake();
-        GameObject _player = _playerFactory.Create(Settings.startPositionPlayer);
-        // _player.SetActive(true);
-        _cinemachine.Follow = _player.transform;
+
+        // Инициализция игрока и установка камеры
+        InitPlayer();
+
 
     }
-
-    private void Start()
+    
+    /// <summary>
+    /// Инициализация игрока
+    /// </summary>
+    private void InitPlayer()
     {
+        GameObject _player = _playerFactory.Create(Settings.startPositionPlayer);
+        _cinemachine.Follow = _player.transform;
     }
 
     /// <summary>
