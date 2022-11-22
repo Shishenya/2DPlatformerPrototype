@@ -6,4 +6,5 @@ using UnityEngine;
 public class MovementDetailsSO : ScriptableObject
 {
     public float speed;
+    public float jumpForce;
 }

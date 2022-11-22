@@ -9,6 +9,7 @@ public static class Settings
     public static int aimRight = Animator.StringToHash("aimRight");
     public static int isIdle = Animator.StringToHash("isIdle");
     public static int isWalk = Animator.StringToHash("isWalk");
+    public static int isJump = Animator.StringToHash("isJump");
     #endregion
 
     #region Default parameters

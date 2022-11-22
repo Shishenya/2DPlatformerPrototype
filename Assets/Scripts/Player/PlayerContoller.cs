@@ -7,16 +7,21 @@ public class PlayerContoller : MonoBehaviour
 
     private Creatures _creatures;
     private float _speed = 5f;
+    private float _jumpForce;
 
     private void Awake()
     {
         _creatures = GetComponent<Creatures>();
         _speed = _creatures.movementDetails.speed;
+        _jumpForce = _creatures.movementDetails.jumpForce;
     }
 
     private void Update()
     {
-        MoveInput(); // ждем нажатий 
+
+        MoveInput(); // движение 
+        Jump(); // прыжок
+
     }
 
     /// <summary>
@@ -24,6 +29,9 @@ public class PlayerContoller : MonoBehaviour
     /// </summary>
     private void MoveInput()
     {
+
+        if (_creatures.isJump) return;
+
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         Vector2 direction = new Vector2(horizontalMovement, 0f);
 
@@ -47,6 +55,28 @@ public class PlayerContoller : MonoBehaviour
             }
 
             _creatures.moveEvent.CallOnMoveEvent(aimDirection, _speed);
+        }
+
+    }
+
+    private void Jump()
+    {
+
+        float horizontalMovement = Input.GetAxisRaw("Horizontal");
+        Vector2 direction = new Vector2(horizontalMovement, 0f);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (_creatures.isJump)
+            {
+                _jumpForce = 0f;
+            }
+            else
+            {
+                _jumpForce = _creatures.movementDetails.jumpForce;
+            }
+            _creatures.jumpEvent.CallOnJumpEvent(_jumpForce, direction, _speed);
+
         }
 
     }

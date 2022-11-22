@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(IdleEvent))]
+[RequireComponent(typeof(MoveEvent))]
+[RequireComponent(typeof(JumpEvent))]
+[DisallowMultipleComponent]
 public abstract class Creatures : MonoBehaviour
 {
     #region Components
@@ -11,9 +16,13 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public MoveEvent moveEvent;
+    [HideInInspector] public JumpEvent jumpEvent;
 
     public CreatureDetailsSO creatureDetails;
     public MovementDetailsSO movementDetails;
+
+    // State
+    /*[HideInInspector]*/ public bool isJump = false;
 
 
     protected virtual void Awake()
@@ -21,6 +30,7 @@ public abstract class Creatures : MonoBehaviour
         animator = GetComponent<Animator>();
         idleEvent = GetComponent<IdleEvent>();
         moveEvent = GetComponent<MoveEvent>();
+        jumpEvent = GetComponent<JumpEvent>();
 
     }
 
