@@ -15,8 +15,22 @@ MonoBehaviour:
   animator: {fileID: 0}
   idleEvent: {fileID: 0}
   moveEvent: {fileID: 0}
+  jumpEvent: {fileID: 0}
   creatureDetails: {fileID: 11400000, guid: d35bdb91fb471004383e71879cf3b046, type: 2}
   movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
+  isJump: 0
+--- !u!114 &-2304370730199188604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210684814854996624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43958095750ce3f42829d5b72b089ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6784289086870386193
 PrefabInstance:
   m_ObjectHideFlags: 0

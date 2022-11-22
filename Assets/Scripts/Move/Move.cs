@@ -30,14 +30,14 @@ public class Move : MonoBehaviour
         Vector2 direction;
         if (moveEventArgs.aimDirection == AimDirection.left)
         {
-            direction = new Vector2(-1f, 0f);
+            direction = new Vector2(-moveEventArgs.speed, _rigidbody2D.velocity.y);
         }
         else
         {
-            direction = new Vector2(1f, 0f);
+            direction = new Vector2(moveEventArgs.speed, _rigidbody2D.velocity.y);
         }
 
-        _rigidbody2D.velocity = moveEventArgs.speed * direction;
+        _rigidbody2D.velocity = direction;
 
     }
 

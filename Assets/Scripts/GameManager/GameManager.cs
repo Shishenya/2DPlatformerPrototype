@@ -38,8 +38,22 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     private void InitPlayer()
     {
-        GameObject _player = _playerFactory.Create(Settings.startPositionPlayer);
+        _player = _playerFactory.Create(Settings.startPositionPlayer);
         _cinemachine.Follow = _player.transform;
+    }
+
+    private void Update()
+    {
+        TestUpdateSpawnEnemy();
+    }
+
+    private void TestUpdateSpawnEnemy()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Vector2 testSpawn = _player.transform.position + new Vector3(-2f, _player.transform.position.y, 0f);
+            GameObject enemy = _enemyFactory.Create(testSpawn);
+        }
     }
 
     /// <summary>

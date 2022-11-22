@@ -28,6 +28,7 @@ public class Idle : MonoBehaviour
     {
         Vector2 curentVelocity = _rigidBody2D.velocity;
         _rigidBody2D.velocity = new Vector2(0f, curentVelocity.y);
+        // Debug.Log("VELOCITY Y = " + curentVelocity.y);
     }
 
 }
