@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(JumpEvent))]
 [RequireComponent(typeof(ChangeHeatlhEvent))]
 [RequireComponent(typeof(Health))]
+[RequireComponent(typeof(WeaponAttackEvent))]
 [DisallowMultipleComponent]
 public abstract class Creatures : MonoBehaviour
 {
@@ -21,12 +22,16 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public JumpEvent jumpEvent;
     [HideInInspector] public ChangeHeatlhEvent changeHeatlhEvent;
     [HideInInspector] public Health health;
+    [HideInInspector] public WeaponAttackEvent weaponAttackEvent;
 
     public CreatureDetailsSO creatureDetails;
     public MovementDetailsSO movementDetails;
 
     // State
     /*[HideInInspector]*/ public bool isJump = false;
+    public bool isIdle = false;
+    public bool isMove = false;
+    public bool isAttack = false;
 
 
     protected virtual void Awake()
@@ -37,6 +42,7 @@ public abstract class Creatures : MonoBehaviour
         jumpEvent = GetComponent<JumpEvent>();
         changeHeatlhEvent = GetComponent<ChangeHeatlhEvent>();
         health = GetComponent<Health>();
+        weaponAttackEvent = GetComponent<WeaponAttackEvent>();
     }
 
     /// <summary>

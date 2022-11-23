@@ -15,7 +15,7 @@ public class AnimateCreature : MonoBehaviour
     private void OnEnable()
     {
         // Регистрируем евенты
-        StartCoroutine(EventsRegister());
+        StartCoroutine(EventsRegisterRoutine());
     }
 
     private void OnDisable()
@@ -25,6 +25,8 @@ public class AnimateCreature : MonoBehaviour
         _creature.moveEvent.OnMove -= MoveEvent_OnMove;
 
         _creature.jumpEvent.OnJump -= JumpEvent_OnJump;
+
+        _creature.weaponAttackEvent.OnWeaponAttack -= WeaponAttackEvent_OnWeaponAttack;
     }
 
 
@@ -47,7 +49,6 @@ public class AnimateCreature : MonoBehaviour
     /// <summary>
     /// Событие прыжка
     /// </summary>
-    /// <param name="jumpEventArgs"></param>
     private void JumpEvent_OnJump(JumpEventArgs jumpEventArgs)
     {
         AimDirection aimDirection;
@@ -61,6 +62,14 @@ public class AnimateCreature : MonoBehaviour
         }
 
         SetJumpAnimation(aimDirection);
+    }
+
+    /// <summary>
+    /// Событие атаки
+    /// </summary>
+    private void WeaponAttackEvent_OnWeaponAttack(WeaponAttackEventArgs weaponAttackEventArgs)
+    {
+        SetAttackAnimation(weaponAttackEventArgs.aimDirection);
     }
 
     /// <summary>
@@ -80,6 +89,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isIdle, false);
         _creature.animator.SetBool(Settings.isWalk, false);
         _creature.animator.SetBool(Settings.isJump, false);
+        _creature.animator.SetBool(Settings.isAttack, false);
     }
 
     /// <summary>
@@ -92,6 +102,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isIdle, true);
         _creature.animator.SetBool(Settings.isWalk, false);
         _creature.animator.SetBool(Settings.isJump, false);
+        _creature.animator.SetBool(Settings.isAttack, false);
     }
 
     /// <summary>
@@ -102,6 +113,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isIdle, false);
         _creature.animator.SetBool(Settings.isJump, false);
         _creature.animator.SetBool(Settings.isWalk, true);
+        _creature.animator.SetBool(Settings.isAttack, false);
 
         ClearAim();
 
@@ -117,6 +129,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isJump, true);
         _creature.animator.SetBool(Settings.isIdle, false);
         _creature.animator.SetBool(Settings.isWalk, false);
+        _creature.animator.SetBool(Settings.isAttack, false);
 
         ClearAim();
 
@@ -125,17 +138,40 @@ public class AnimateCreature : MonoBehaviour
     }
 
     /// <summary>
+    /// Установка анимации атаки
+    /// </summary>
+    private void SetAttackAnimation(AimDirection aimDirection)
+    {
+        _creature.animator.SetBool(Settings.isJump, false);
+        _creature.animator.SetBool(Settings.isIdle, false);
+        _creature.animator.SetBool(Settings.isWalk, false);
+        _creature.animator.SetBool(Settings.isAttack, true);
+
+        ClearAim();
+
+        if (aimDirection == AimDirection.left) { 
+            _creature.animator.SetBool(Settings.aimLeft, true);
+        }
+        if (aimDirection == AimDirection.right)
+        {
+            _creature.animator.SetBool(Settings.aimRight, true);
+        }
+    }
+
+    /// <summary>
     /// Регистрация ивентов
     /// </summary>
-    private IEnumerator EventsRegister()
+    private IEnumerator EventsRegisterRoutine()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return null;
 
         _creature.idleEvent.OnIdle += IdleEvent_OnIdle; // покой
 
         _creature.moveEvent.OnMove += MoveEvent_OnMove; // движение
 
         _creature.jumpEvent.OnJump += JumpEvent_OnJump; // прыжок
+
+        _creature.weaponAttackEvent.OnWeaponAttack += WeaponAttackEvent_OnWeaponAttack;
 
         yield return null;
     }

@@ -10,6 +10,7 @@ public static class Settings
     public static int isIdle = Animator.StringToHash("isIdle");
     public static int isWalk = Animator.StringToHash("isWalk");
     public static int isJump = Animator.StringToHash("isJump");
+    public static int isAttack = Animator.StringToHash("isAttack");
     #endregion
 
     #region Default parameters

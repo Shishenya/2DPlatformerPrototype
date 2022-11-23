@@ -74,13 +74,16 @@ public class ImmunityAfterDamage : MonoBehaviour
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         Color currentColor = spriteRenderer.color;
+        float normalAlpha = 1f;
+        Color normalColor = new Color(currentColor.r, currentColor.g, currentColor.b, normalAlpha);
+        Color blickColor = new Color(currentColor.r, currentColor.g, currentColor.b, normalAlpha / 2f);
 
-        while(_isImmunityAfterDamage)
+        while (_isImmunityAfterDamage)
         {
-            spriteRenderer.color = new Color(currentColor.r, currentColor.g, currentColor.b, 0.5f);
-            yield return new WaitForSeconds(0.1f);
-            spriteRenderer.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1f);
-            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.color = blickColor;
+            yield return new WaitForSeconds(0.05f);
+            spriteRenderer.color = normalColor;
+            yield return new WaitForSeconds(0.05f);
         }
 
         yield return new WaitForSeconds(_immunityAfterDamageSecond);
