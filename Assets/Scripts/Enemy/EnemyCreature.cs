@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EnemyCreature : Creatures
 {
- 
+    public EnemyDetailsSO enemyDetailsSO;
 }

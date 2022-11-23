@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(IdleEvent))]
 [RequireComponent(typeof(MoveEvent))]
 [RequireComponent(typeof(JumpEvent))]
+[RequireComponent(typeof(ChangeHeatlhEvent))]
+[RequireComponent(typeof(Health))]
 [DisallowMultipleComponent]
 public abstract class Creatures : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public MoveEvent moveEvent;
     [HideInInspector] public JumpEvent jumpEvent;
+    [HideInInspector] public ChangeHeatlhEvent changeHeatlhEvent;
+    [HideInInspector] public Health health;
 
     public CreatureDetailsSO creatureDetails;
     public MovementDetailsSO movementDetails;
@@ -31,7 +35,8 @@ public abstract class Creatures : MonoBehaviour
         idleEvent = GetComponent<IdleEvent>();
         moveEvent = GetComponent<MoveEvent>();
         jumpEvent = GetComponent<JumpEvent>();
-
+        changeHeatlhEvent = GetComponent<ChangeHeatlhEvent>();
+        health = GetComponent<Health>();
     }
 
     /// <summary>
