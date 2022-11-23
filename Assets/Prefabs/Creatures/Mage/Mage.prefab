@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43958095750ce3f42829d5b72b089ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentAimDirection: 0
 --- !u!114 &6407663540433543148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,6 +29,8 @@ MonoBehaviour:
   idleEvent: {fileID: 0}
   moveEvent: {fileID: 0}
   jumpEvent: {fileID: 0}
+  changeHeatlhEvent: {fileID: 0}
+  health: {fileID: 0}
   creatureDetails: {fileID: 11400000, guid: d35bdb91fb471004383e71879cf3b046, type: 2}
   movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
   isJump: 0
@@ -39,13 +42,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3943855833291439954, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: _contactDamageDetails
+      value: 
+      objectReference: {fileID: 11400000, guid: 780ba2cb3edcb6749b7ed7ad267435dc, type: 2}
+    - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2209406
+      objectReference: {fileID: 0}
+    - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6761522
+      objectReference: {fileID: 0}
     - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Offset.x
-      value: -0.17
+      value: -0.067132235
       objectReference: {fileID: 0}
     - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Offset.y
-      value: -0.77
+      value: -0.049925208
       objectReference: {fileID: 0}
     - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -58,6 +73,10 @@ PrefabInstance:
     - target: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Name
       value: Mage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7498918559002667877, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_RootOrder

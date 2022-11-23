@@ -12,4 +12,9 @@ public class CreatureDetailsSO : ScriptableObject
     [Space(10)]
     [Header("Health parameters")]
     public int maxAmountHealth = 5;
+
+    [Space(10)]
+    [Header("Damage parameters")]
+    public float ummunityAfterDamageSecond = 2f;
+
 }
