@@ -24,6 +24,17 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public Health health;
     [HideInInspector] public WeaponAttackEvent weaponAttackEvent;
 
+    #region
+    [Space(10)]
+    [Header("Components Creature")]
+    #endregion
+    public GameObject weaponCreature;
+
+
+    #region
+    [Space(10)]
+    [Header("Details Creature")]
+    #endregion
     public CreatureDetailsSO creatureDetails;
     public MovementDetailsSO movementDetails;
 
