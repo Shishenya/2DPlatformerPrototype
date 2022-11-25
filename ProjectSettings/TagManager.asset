@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Decoration1
+    uniqueID: 798456185
+    locked: 0
+  - name: Instance
+    uniqueID: 1548869827
+    locked: 0

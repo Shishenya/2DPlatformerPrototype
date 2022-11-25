@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(IdleEvent))]
 [RequireComponent(typeof(MoveEvent))]
 [RequireComponent(typeof(JumpEvent))]
@@ -17,6 +18,7 @@ public abstract class Creatures : MonoBehaviour
     [Space(10)]
     #endregion
     [HideInInspector] public Animator animator;
+    [HideInInspector] public new Rigidbody2D rigidbody2D;
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public MoveEvent moveEvent;
     [HideInInspector] public JumpEvent jumpEvent;
@@ -48,6 +50,7 @@ public abstract class Creatures : MonoBehaviour
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
         idleEvent = GetComponent<IdleEvent>();
         moveEvent = GetComponent<MoveEvent>();
         jumpEvent = GetComponent<JumpEvent>();
