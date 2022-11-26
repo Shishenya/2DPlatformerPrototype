@@ -51,7 +51,11 @@ public class PlayerContoller : MonoBehaviour
 
         if (_creatures.isJump) return;
 
-        if (_creatures.isAttack) return;
+        if (_creatures.isAttack)
+        {
+            _creatures.weaponAttackEvent.CallMovementByAttack(0,AimDirection.left, _horizontalMovement);
+            return;
+        }
 
         Vector2 direction = new Vector2(_horizontalMovement, 0f);
 
@@ -100,7 +104,7 @@ public class PlayerContoller : MonoBehaviour
         // если прыжок, то не атакуем
         if (_creatures.isJump) return;
 
- 
+
         if (Input.GetMouseButtonDown(0))
         {
             // Устанавливаем состояние
@@ -110,7 +114,7 @@ public class PlayerContoller : MonoBehaviour
             // Получаем позицию клика
             Vector3 positionClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             AimDirection direction;
-            if (positionClick.x>=GameManager.Instance.GetPlayer().transform.position.x)
+            if (positionClick.x >= GameManager.Instance.GetPlayer().transform.position.x)
             {
                 direction = AimDirection.right;
             }
@@ -121,7 +125,7 @@ public class PlayerContoller : MonoBehaviour
 
             // Запускаем корутину удара
             StartCoroutine(SetNormalStateAfterAttackRoutine());
-            _creatures.weaponAttackEvent.CallWeaponAttackEvent(0, direction);
+            _creatures.weaponAttackEvent.CallWeaponAttackEvent(0, direction, _horizontalMovement);
         }
     }
 
