@@ -45,6 +45,7 @@ public abstract class Creatures : MonoBehaviour
     public bool isIdle = false;
     public bool isMove = false;
     public bool isAttack = false;
+    public bool isGround = false;
 
 
     protected virtual void Awake()

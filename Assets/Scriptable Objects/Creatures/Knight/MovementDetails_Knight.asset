@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MovementDetails_Knight
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 5
+  jumpForce: 11

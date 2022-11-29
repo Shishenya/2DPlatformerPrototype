@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerContoller : MonoBehaviour
 {
 
-    private Creatures _creatures;
+    private Creatures _creature;
     private float _speed = 5f;
     private float _jumpForce;
 
@@ -14,9 +14,9 @@ public class PlayerContoller : MonoBehaviour
 
     private void Awake()
     {
-        _creatures = GetComponent<Creatures>();
-        _speed = _creatures.movementDetails.speed;
-        _jumpForce = _creatures.movementDetails.jumpForce;
+        _creature = GetComponent<Creatures>();
+        _speed = _creature.movementDetails.speed;
+        _jumpForce = _creature.movementDetails.jumpForce;
     }
 
     private void Update()
@@ -49,11 +49,11 @@ public class PlayerContoller : MonoBehaviour
     private void MoveInput()
     {
 
-        if (_creatures.isJump) return;
+        if (_creature.isJump) return;
 
-        if (_creatures.isAttack)
+        if (_creature.isAttack)
         {
-            _creatures.weaponAttackEvent.CallMovementByAttack(0,AimDirection.left, _horizontalMovement);
+            _creature.weaponAttackEvent.CallMovementByAttack(0, AimDirection.left, _horizontalMovement);
             return;
         }
 
@@ -62,12 +62,12 @@ public class PlayerContoller : MonoBehaviour
         // если движения нет, то состяоние покоя
         if (direction == Vector2.zero)
         {
-            _creatures.idleEvent.CallOnIdleEvent();
+            _creature.idleEvent.CallOnIdleEvent();
         }
         // движение есть
         else
         {
-            _creatures.moveEvent.CallOnMoveEvent(_aimDirection, _speed);
+            _creature.moveEvent.CallOnMoveEvent(_aimDirection, _speed);
         }
 
     }
@@ -80,20 +80,11 @@ public class PlayerContoller : MonoBehaviour
 
         Vector2 direction = new Vector2(_horizontalMovement, 0f);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _creature.isGround)
         {
-            if (_creatures.isJump)
-            {
-                _jumpForce = 0f;
-            }
-            else
-            {
-                _jumpForce = _creatures.movementDetails.jumpForce;
-            }
-            _creatures.jumpEvent.CallOnJumpEvent(_jumpForce, direction, _speed);
-
+            _jumpForce = _creature.movementDetails.jumpForce;
+            _creature.jumpEvent.CallOnJumpEvent(_jumpForce, direction, _speed);
         }
-
     }
 
     /// <summary>
@@ -102,14 +93,13 @@ public class PlayerContoller : MonoBehaviour
     private void Attack()
     {
         // если прыжок, то не атакуем
-        if (_creatures.isJump) return;
-
+        if (_creature.isJump) return;
 
         if (Input.GetMouseButtonDown(0))
         {
             // Устанавливаем состояние
-            _creatures.isAttack = true;
-            _creatures.isIdle = false;
+            _creature.isAttack = true;
+            _creature.isIdle = false;
 
             // Получаем позицию клика
             Vector3 positionClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -125,7 +115,7 @@ public class PlayerContoller : MonoBehaviour
 
             // Запускаем корутину удара
             StartCoroutine(SetNormalStateAfterAttackRoutine());
-            _creatures.weaponAttackEvent.CallWeaponAttackEvent(0, direction, _horizontalMovement);
+            _creature.weaponAttackEvent.CallWeaponAttackEvent(0, direction, _horizontalMovement);
         }
     }
 
@@ -136,7 +126,7 @@ public class PlayerContoller : MonoBehaviour
     {
         float durationSecond = 1f;
         yield return new WaitForSeconds(durationSecond);
-        _creatures.isAttack = false;
+        _creature.isAttack = false;
         yield return null;
     }
 

@@ -38,6 +38,7 @@ public class Jump : MonoBehaviour
         float modificator = 2f;
         _rigidbody2D.velocity = new Vector2(direction.x * speed / modificator, jumpForce);
         _creature.isJump = true;
+        _creature.isGround = false;
     }
 
 }
