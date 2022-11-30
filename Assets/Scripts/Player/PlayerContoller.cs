@@ -22,9 +22,10 @@ public class PlayerContoller : MonoBehaviour
     private void Update()
     {
 
-        if (_creature.isDeath) {
+        if (_creature.isDeath)
+        {
             _creature.rigidbody2D.velocity = Vector2.zero;
-            return; 
+            return;
         }
 
 
@@ -46,6 +47,8 @@ public class PlayerContoller : MonoBehaviour
         Jump(); // прыжок
 
         Attack(); // Атака
+
+        UseItem(); // использовать предмет
 
     }
 
@@ -126,6 +129,32 @@ public class PlayerContoller : MonoBehaviour
             StartCoroutine(SetNormalStateAfterAttackRoutine());
             _creature.weaponAttackEvent.CallWeaponAttackEvent(0, direction, _horizontalMovement);
         }
+    }
+
+    /// <summary>
+    /// Использование предмета перед собой справа
+    /// </summary>
+    private void UseItem()
+    {
+        if (_creature.isJump) return;
+        if (_creature.isAttack) return;
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + new Vector3(1f, 0f), Vector2.right, Settings.distanceUseable);
+            // Debug.DrawRay(transform.position + new Vector3(1f, 0f), Vector2.right, Color.red, 3f);
+
+            if (hitRight.collider == null) return;
+
+            GameObject go = hitRight.collider.gameObject;
+
+            if (go.GetComponent<IUseable>() != null)
+            {
+                IUseable iUseable = go.GetComponent<IUseable>();
+                iUseable.UseItem();
+            }
+        }
+
     }
 
     /// <summary>

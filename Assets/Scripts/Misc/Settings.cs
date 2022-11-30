@@ -19,4 +19,8 @@ public static class Settings
     public static float defaultSpeedCreature = 1f;
     public static Vector2 startPositionPlayer = new Vector2(0f, 3f);
     #endregion
+
+    #region Useable parameters
+    public static float distanceUseable = 2f;
+    #endregion
 }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac38d820764e834597495317406d753, type: 3}
   m_Name: LevelDetails_Test
   m_EditorClassIdentifier: 
-  depthLevel: 3
+  depthLevel: 5
   levelSectionGOList:
   - {fileID: 356427794513688669, guid: ad793fc73c8826442947950fb97917a8, type: 3}
   - {fileID: 2481915753542413451, guid: c3a842fc8bd21a8498e24de3457e0547, type: 3}
+  - {fileID: 2481915753542413451, guid: ba320b5ba83631f4d8c4509b5d0cae5b, type: 3}

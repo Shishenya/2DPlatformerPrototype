@@ -29,10 +29,10 @@ public class PlayerHealthBarUI : MonoBehaviour
 
     private void ChangeHeatlhEvent_OnChangeHealth(ChangeHeatlhEventArgs changeHeatlhEventArgs)
     {
-        ChangeHealthUI(changeHeatlhEventArgs.amount);
+        ChangeHealthUI();
     }
 
-    private void ChangeHealthUI(int amount)
+    private void ChangeHealthUI()
     {
         // _slider.value = GameManager.Instance.GetPlayer().GetComponent<Creatures>().health.CurrentAmountHealth;
         StartCoroutine(ChangeHealthUIRoutine());
@@ -53,6 +53,9 @@ public class PlayerHealthBarUI : MonoBehaviour
         _slider.value = GameManager.Instance.GetPlayer().GetComponent<Creatures>().creatureDetails.maxAmountHealth;
     }
 
+    /// <summary>
+    ///  орутина изменени€ здоровь€ на UI панели
+    /// </summary>
     private IEnumerator ChangeHealthUIRoutine()
     {
         yield return new WaitForFixedUpdate();
