@@ -31,10 +31,16 @@ public class EnemyCreature : Creatures
 
             if (timerAttackSecond < 0)
             {
-                EnemyAttack();
-                SetTimerAttack();
+                if (CheckAttackMelee())
+                {
+                    EnemyAttack();
+                }
+                else
+                {
+                    SetTimerAttack();
+                }
             }
-        }        
+        }
     }
 
     private void EnemyAttack()
@@ -62,5 +68,23 @@ public class EnemyCreature : Creatures
         weaponAttackEvent.CallWeaponAttackEvent(0, direction, _horizontalMovement);
         yield return new WaitForSeconds(1f);
         isAttack = false;
+        SetTimerAttack();
     }
+
+    /// <summary>
+    /// Проверяет условия для атаки в мили
+    /// </summary>
+    private bool CheckAttackMelee()
+    {
+        if (Vector2.Distance(transform.position, GameManager.Instance.GetPlayer().transform.position) < enemyDetailsSO.enemyMeleeRange)
+        {
+            float rnd = Random.Range(0f, 100f);
+            if (rnd < enemyDetailsSO.enemyChanceAttackMelee)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

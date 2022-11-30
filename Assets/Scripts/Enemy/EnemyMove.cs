@@ -59,16 +59,26 @@ public class EnemyMove : MonoBehaviour
         {
             _changeAimTimer = _changeAimStart;
 
-            if (_currentAimDirection == AimDirection.left)
+            // если нет указания следовать всегда за игроком, то меняем направление
+            if (!_creature.enemyDetailsSO.isAlwaysFollowPlayer)
             {
-                _currentAimDirection = AimDirection.right;
-                return;
-            }
 
-            if (_currentAimDirection == AimDirection.right)
+                if (_currentAimDirection == AimDirection.left)
+                {
+                    _currentAimDirection = AimDirection.right;
+                    return;
+                }
+
+                if (_currentAimDirection == AimDirection.right)
+                {
+                    _currentAimDirection = AimDirection.left;
+                    return;
+                }
+            }
+            // иначе всегда следуем за игроком
+            else
             {
-                _currentAimDirection = AimDirection.left;
-                return;
+                _currentAimDirection = Utilites.LookAtPlayer(transform);
             }
         }
 

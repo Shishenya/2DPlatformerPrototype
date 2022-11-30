@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560308e09f00f01418574e00409f87a3, type: 3}
   m_Name: ContactDamageDetails_Knight
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 384

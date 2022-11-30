@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: EnemyDetails_Mage
   m_EditorClassIdentifier: 
   changeMove: 2
+  isAlwaysFollowPlayer: 1
+  enemyMeleeRange: 3.5
+  enemyChanceAttackMelee: 50

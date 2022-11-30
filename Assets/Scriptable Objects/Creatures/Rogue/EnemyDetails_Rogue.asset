@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: EnemyDetails_Rogue
   m_EditorClassIdentifier: 
   changeMove: 3
-  enemyMeleeRange: 1
+  isAlwaysFollowPlayer: 0
+  enemyMeleeRange: 2
+  enemyChanceAttackMelee: 85

@@ -57,6 +57,9 @@ public class PlayerContoller : MonoBehaviour
 
         if (_creature.isJump) return;
 
+        // Пока включу, но на самом деле в игре можно и оставить
+        // if (!_creature.isGround) return;
+
         if (_creature.isAttack)
         {
             _creature.weaponAttackEvent.CallMovementByAttack(0, AimDirection.left, _horizontalMovement);

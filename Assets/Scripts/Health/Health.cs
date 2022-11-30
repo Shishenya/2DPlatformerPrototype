@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     private int _maxAmountHealth;
     private int _currentAmountHealth;
 
+    public int CurrentAmountHealth { get => _currentAmountHealth; }
+
     private void Awake()
     {
         _creature = GetComponent<Creatures>();

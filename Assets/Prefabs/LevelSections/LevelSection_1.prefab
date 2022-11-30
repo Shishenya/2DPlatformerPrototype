@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: levelSectionSO
       value: 
       objectReference: {fileID: 11400000, guid: 83d67557fcab7404da7372efe9ea7953, type: 2}
+    - target: {fileID: 1598947778820916659, guid: c0acedaa3b575884ab24a58afb187250, type: 3}
+      propertyPath: m_Size.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1969796070881490251, guid: c0acedaa3b575884ab24a58afb187250, type: 3}
       propertyPath: m_Name
       value: LevelSection_1
