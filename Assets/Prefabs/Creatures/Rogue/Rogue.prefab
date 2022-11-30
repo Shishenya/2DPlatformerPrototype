@@ -20,6 +20,7 @@ MonoBehaviour:
   changeHeatlhEvent: {fileID: 0}
   health: {fileID: 0}
   weaponAttackEvent: {fileID: 0}
+  deathEvent: {fileID: 0}
   weaponCreature: {fileID: 0}
   creatureDetails: {fileID: 11400000, guid: 21e9b8adabe40b2488c15f9ec268a641, type: 2}
   movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
@@ -27,7 +28,22 @@ MonoBehaviour:
   isIdle: 0
   isMove: 0
   isAttack: 0
+  isGround: 0
+  isDeath: 0
   enemyDetailsSO: {fileID: 11400000, guid: 948a8f03700b2bb40aae39263da12824, type: 2}
+  newAttackSecond: 3
+--- !u!114 &2099790882872170972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832168567985282423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b118d6884cc327847b40943b8eafd974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5177453474342858975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentAimDirection: 0
---- !u!114 &2099790882872170972
+--- !u!114 &-4737461215899594506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,7 +66,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3832168567985282423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b118d6884cc327847b40943b8eafd974, type: 3}
+  m_Script: {fileID: 11500000, guid: 28ccb423415ce1942ba4ec31ac7d8b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7630429559193184758

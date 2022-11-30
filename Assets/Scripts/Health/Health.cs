@@ -31,6 +31,11 @@ public class Health : MonoBehaviour
     public void SetHealthAmount(int amount)
     {
         _currentAmountHealth -= amount;
+        if (_currentAmountHealth<=0)
+        {
+            // Death
+            _creature.deathEvent.CallOnDeathEvent();
+        }
     }
 
 

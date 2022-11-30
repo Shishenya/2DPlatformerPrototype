@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: CreatureDetails_Knight
   m_EditorClassIdentifier: 
   prefabCreature: {fileID: 1928711586029800532, guid: 37ecfd41e03021b43829e6b904fc6144, type: 3}
+  maxAmountHealth: 10
+  ummunityAfterDamageSecond: 1

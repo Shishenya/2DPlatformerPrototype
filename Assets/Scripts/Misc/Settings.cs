@@ -11,6 +11,7 @@ public static class Settings
     public static int isWalk = Animator.StringToHash("isWalk");
     public static int isJump = Animator.StringToHash("isJump");
     public static int isAttack = Animator.StringToHash("isAttack");
+    public static int isDeath = Animator.StringToHash("isDeath");
     public static int isSway = Animator.StringToHash("isSway");
     #endregion
 

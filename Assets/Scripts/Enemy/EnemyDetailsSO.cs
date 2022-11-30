@@ -6,4 +6,5 @@ using UnityEngine;
 public class EnemyDetailsSO : ScriptableObject
 {
     public float changeMove = 5f;
+    public float enemyMeleeRange = 2f;
 }

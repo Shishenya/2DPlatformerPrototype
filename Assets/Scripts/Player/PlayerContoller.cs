@@ -22,6 +22,12 @@ public class PlayerContoller : MonoBehaviour
     private void Update()
     {
 
+        if (_creature.isDeath) {
+            _creature.rigidbody2D.velocity = Vector2.zero;
+            return; 
+        }
+
+
         // Получаем движение по горизонате
         _horizontalMovement = Input.GetAxisRaw("Horizontal");
 

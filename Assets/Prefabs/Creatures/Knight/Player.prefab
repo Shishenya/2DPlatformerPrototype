@@ -25,12 +25,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  rigidbody2D: {fileID: 0}
   idleEvent: {fileID: 0}
   moveEvent: {fileID: 0}
   jumpEvent: {fileID: 0}
   changeHeatlhEvent: {fileID: 0}
   health: {fileID: 0}
   weaponAttackEvent: {fileID: 0}
+  deathEvent: {fileID: 0}
   weaponCreature: {fileID: 8491399343293445587}
   creatureDetails: {fileID: 11400000, guid: e528e3b455b03e240aa4114a75fbda75, type: 2}
   movementDetails: {fileID: 11400000, guid: e4d17bea097351942917dadaceaedc69, type: 2}
@@ -38,6 +40,20 @@ MonoBehaviour:
   isIdle: 0
   isMove: 0
   isAttack: 0
+  isGround: 0
+  isDeath: 0
+--- !u!114 &115482826339404739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928711586029800532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57fb53d0542f5d41b991de2ac6b2fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2688835192292797550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +90,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.28899112
+      objectReference: {fileID: 0}
+    - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Offset.y
       value: -0.76
       objectReference: {fileID: 0}
@@ -82,6 +102,18 @@ PrefabInstance:
       value: 1.90625
       objectReference: {fileID: 0}
     - target: {fileID: 220474815720615230, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 554470614128295076, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 554470614128295076, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.90625
+      objectReference: {fileID: 0}
+    - target: {fileID: 554470614128295076, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.75
       objectReference: {fileID: 0}

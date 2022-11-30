@@ -16,17 +16,17 @@ public class ContactDamageCollidable : MonoBehaviour
                 if (!collision.gameObject.GetComponent<ImmunityAfterDamage>().IsImmunityAfterDamage)
                 {
                     TakeContactDamage(collision);
-                    Debug.Log(collision.gameObject.name + " нанес контактный урон TRIGGER " + gameObject.name);
+                    //Debug.Log(collision.gameObject.name + " нанес контактный урон TRIGGER " + gameObject.name);
                 }
                 else
                 {
-                    Debug.Log("Иммунитет к урону! TRIGGER");
+                    //Debug.Log("Иммунитет к урону! TRIGGER");
                 }
             }
             else
             {
                 TakeContactDamage(collision);
-                Debug.Log(collision.gameObject.name + " нанес контактный урон TRIGGER " + gameObject.name);
+                //Debug.Log(collision.gameObject.name + " нанес контактный урон TRIGGER " + gameObject.name);
             }
 
 
@@ -43,7 +43,7 @@ public class ContactDamageCollidable : MonoBehaviour
     /// </summary>
     private void TakeContactDamage(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name + " нанес контактный урон " + gameObject.name);
+        // Debug.Log(collision.gameObject.name + " нанес контактный урон " + gameObject.name);
         collision.gameObject.GetComponent<Creatures>().changeHeatlhEvent.CallOnChangeHealthEvent(_contactDamageDetails.damage);
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
 
-    private EnemyCreature _creatures;
+    private EnemyCreature _creature;
     private float _speed = 5f;
     private float _jumpForce;
     public AimDirection _currentAimDirection;
@@ -18,11 +18,11 @@ public class EnemyMove : MonoBehaviour
 
     private void Awake()
     {
-        _creatures = GetComponent<EnemyCreature>();
-        _speed = _creatures.movementDetails.speed;
-        _jumpForce = _creatures.movementDetails.jumpForce;
+        _creature = GetComponent<EnemyCreature>();
+        _speed = _creature.movementDetails.speed;
+        _jumpForce = _creature.movementDetails.jumpForce;
 
-        _changeAimStart = _creatures.enemyDetailsSO.changeMove;
+        _changeAimStart = _creature.enemyDetailsSO.changeMove;
         _changeAimTimer = _changeAimStart;
         _currentAimDirection = AimDirection.left;
 
@@ -30,6 +30,13 @@ public class EnemyMove : MonoBehaviour
 
     private void Update()
     {
+
+        if (_creature.isDeath)
+        {
+            _creature.rigidbody2D.velocity = Vector2.zero;
+            return;
+        }
+
         MoveEnemy();
 
         TimerMoveChange();
@@ -41,13 +48,14 @@ public class EnemyMove : MonoBehaviour
     /// </summary>
     private void MoveEnemy()
     {
-        _creatures.moveEvent.CallOnMoveEvent(_currentAimDirection, _speed);
+        if (_creature.isAttack) return;
+        _creature.moveEvent.CallOnMoveEvent(_currentAimDirection, _speed);
     }
 
     private void TimerMoveChange()
     {
         _changeAimTimer -= Time.deltaTime;
-        if (_changeAimTimer<0)
+        if (_changeAimTimer < 0)
         {
             _changeAimTimer = _changeAimStart;
 

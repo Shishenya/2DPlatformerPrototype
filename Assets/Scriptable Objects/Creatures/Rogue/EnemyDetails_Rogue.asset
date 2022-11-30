@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: EnemyDetails_Rogue
   m_EditorClassIdentifier: 
   changeMove: 3
+  enemyMeleeRange: 1

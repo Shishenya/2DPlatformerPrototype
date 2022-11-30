@@ -27,6 +27,8 @@ public class AnimateCreature : MonoBehaviour
         _creature.jumpEvent.OnJump -= JumpEvent_OnJump;
 
         _creature.weaponAttackEvent.OnWeaponAttack -= WeaponAttackEvent_OnWeaponAttack;
+
+        _creature.deathEvent.OnDeath -= DeathEvent_OnDeath;
     }
 
 
@@ -90,6 +92,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isWalk, false);
         _creature.animator.SetBool(Settings.isJump, false);
         _creature.animator.SetBool(Settings.isAttack, false);
+        _creature.animator.SetBool(Settings.isDeath, false);
     }
 
     /// <summary>
@@ -103,6 +106,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isWalk, false);
         _creature.animator.SetBool(Settings.isJump, false);
         _creature.animator.SetBool(Settings.isAttack, false);
+        _creature.animator.SetBool(Settings.isDeath, false);
     }
 
     /// <summary>
@@ -114,6 +118,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isJump, false);
         _creature.animator.SetBool(Settings.isWalk, true);
         _creature.animator.SetBool(Settings.isAttack, false);
+        _creature.animator.SetBool(Settings.isDeath, false);
 
         ClearAim();
 
@@ -130,6 +135,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isIdle, false);
         _creature.animator.SetBool(Settings.isWalk, false);
         _creature.animator.SetBool(Settings.isAttack, false);
+        _creature.animator.SetBool(Settings.isDeath, false);
 
         ClearAim();
 
@@ -146,6 +152,7 @@ public class AnimateCreature : MonoBehaviour
         _creature.animator.SetBool(Settings.isIdle, false);
         _creature.animator.SetBool(Settings.isWalk, false);
         _creature.animator.SetBool(Settings.isAttack, true);
+        _creature.animator.SetBool(Settings.isDeath, false);
 
         ClearAim();
 
@@ -156,6 +163,26 @@ public class AnimateCreature : MonoBehaviour
         {
             _creature.animator.SetBool(Settings.aimRight, true);
         }
+    }
+
+    /// <summary>
+    /// Смерть существа
+    /// </summary>
+    private void DeathEvent_OnDeath()
+    {
+        SetDeathAnimation();
+    }
+
+    /// <summary>
+    /// Анимация смерти
+    /// </summary>
+    private void SetDeathAnimation()
+    {
+        _creature.animator.SetBool(Settings.isJump, false);
+        _creature.animator.SetBool(Settings.isIdle, false);
+        _creature.animator.SetBool(Settings.isWalk, false);
+        _creature.animator.SetBool(Settings.isAttack, false);
+        _creature.animator.SetBool(Settings.isDeath, true);
     }
 
     /// <summary>
@@ -172,6 +199,8 @@ public class AnimateCreature : MonoBehaviour
         _creature.jumpEvent.OnJump += JumpEvent_OnJump; // прыжок
 
         _creature.weaponAttackEvent.OnWeaponAttack += WeaponAttackEvent_OnWeaponAttack;
+
+        _creature.deathEvent.OnDeath += DeathEvent_OnDeath;
 
         yield return null;
     }

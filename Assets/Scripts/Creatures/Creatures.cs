@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Rigidbody2D))]
+// [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(IdleEvent))]
 [RequireComponent(typeof(MoveEvent))]
 [RequireComponent(typeof(JumpEvent))]
 [RequireComponent(typeof(ChangeHeatlhEvent))]
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(WeaponAttackEvent))]
+[RequireComponent(typeof(DeathEvent))]
 [DisallowMultipleComponent]
 public abstract class Creatures : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public ChangeHeatlhEvent changeHeatlhEvent;
     [HideInInspector] public Health health;
     [HideInInspector] public WeaponAttackEvent weaponAttackEvent;
+    [HideInInspector] public DeathEvent deathEvent;
 
     #region
     [Space(10)]
@@ -33,7 +35,7 @@ public abstract class Creatures : MonoBehaviour
     public GameObject weaponCreature;
 
 
-    #region
+    #region Details Creature
     [Space(10)]
     [Header("Details Creature")]
     #endregion
@@ -46,6 +48,7 @@ public abstract class Creatures : MonoBehaviour
     public bool isMove = false;
     public bool isAttack = false;
     public bool isGround = false;
+    public bool isDeath = false;
 
 
     protected virtual void Awake()
@@ -58,6 +61,7 @@ public abstract class Creatures : MonoBehaviour
         changeHeatlhEvent = GetComponent<ChangeHeatlhEvent>();
         health = GetComponent<Health>();
         weaponAttackEvent = GetComponent<WeaponAttackEvent>();
+        deathEvent = GetComponent<DeathEvent>();
     }
 
     /// <summary>
