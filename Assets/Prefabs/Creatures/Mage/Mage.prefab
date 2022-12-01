@@ -49,6 +49,7 @@ MonoBehaviour:
   weaponCreature: {fileID: 0}
   creatureDetails: {fileID: 11400000, guid: d35bdb91fb471004383e71879cf3b046, type: 2}
   movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
+  jumpPoint: {fileID: 2598572085982390363}
   isJump: 0
   isIdle: 0
   isMove: 0
@@ -212,6 +213,14 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[13].y
       value: 0.40625
       objectReference: {fileID: 0}
+    - target: {fileID: 3157030656189270711, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.214
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157030656189270711, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.889
+      objectReference: {fileID: 0}
     - target: {fileID: 3567536048183822539, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -277,5 +286,10 @@ PrefabInstance:
 --- !u!1 &210684814854996624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+  m_PrefabInstance: {fileID: 6784289086870386193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2598572085982390363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8802665290825342538, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
   m_PrefabInstance: {fileID: 6784289086870386193}
   m_PrefabAsset: {fileID: 0}

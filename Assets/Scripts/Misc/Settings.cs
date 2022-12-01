@@ -13,14 +13,16 @@ public static class Settings
     public static int isAttack = Animator.StringToHash("isAttack");
     public static int isDeath = Animator.StringToHash("isDeath");
     public static int isSway = Animator.StringToHash("isSway");
+    public static int isUse = Animator.StringToHash("isUse");
     #endregion
 
     #region Default parameters
     public static float defaultSpeedCreature = 1f;
     public static Vector2 startPositionPlayer = new Vector2(0f, 3f);
+    public static float distanceRaycastJump = 0.5f;
     #endregion
 
     #region Useable parameters
-    public static float distanceUseable = 2f;
+    public static float distanceUseable = 1f;
     #endregion
 }

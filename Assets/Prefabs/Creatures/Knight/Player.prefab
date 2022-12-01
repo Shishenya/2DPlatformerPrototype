@@ -36,6 +36,7 @@ MonoBehaviour:
   weaponCreature: {fileID: 8491399343293445587}
   creatureDetails: {fileID: 11400000, guid: e528e3b455b03e240aa4114a75fbda75, type: 2}
   movementDetails: {fileID: 11400000, guid: e4d17bea097351942917dadaceaedc69, type: 2}
+  jumpPoint: {fileID: 4334525274864821919}
   isJump: 0
   isIdle: 0
   isMove: 0
@@ -343,5 +344,10 @@ GameObject:
 --- !u!1 &8491399343293445587 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3736166911155014918, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+  m_PrefabInstance: {fileID: 5047984001177565397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4334525274864821919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8802665290825342538, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
   m_PrefabInstance: {fileID: 5047984001177565397}
   m_PrefabAsset: {fileID: 0}

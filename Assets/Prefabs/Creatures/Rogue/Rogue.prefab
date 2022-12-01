@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4737461215899594506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832168567985282423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ccb423415ce1942ba4ec31ac7d8b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &682252077309704932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,6 +36,7 @@ MonoBehaviour:
   weaponCreature: {fileID: 0}
   creatureDetails: {fileID: 11400000, guid: 21e9b8adabe40b2488c15f9ec268a641, type: 2}
   movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
+  jumpPoint: {fileID: 1427045353120053180}
   isJump: 0
   isIdle: 0
   isMove: 0
@@ -57,18 +70,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentAimDirection: 0
---- !u!114 &-4737461215899594506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3832168567985282423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28ccb423415ce1942ba4ec31ac7d8b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7630429559193184758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -228,6 +229,14 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[14].y
       value: 0.65625
       objectReference: {fileID: 0}
+    - target: {fileID: 3157030656189270711, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157030656189270711, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.808
+      objectReference: {fileID: 0}
     - target: {fileID: 3567536048183822539, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -297,5 +306,10 @@ PrefabInstance:
 --- !u!1 &3832168567985282423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+  m_PrefabInstance: {fileID: 7630429559193184758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1427045353120053180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8802665290825342538, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
   m_PrefabInstance: {fileID: 7630429559193184758}
   m_PrefabAsset: {fileID: 0}

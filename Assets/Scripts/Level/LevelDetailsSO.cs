@@ -7,4 +7,6 @@ public class LevelDetailsSO : ScriptableObject
 {
     public int depthLevel;
     public List<GameObject> levelSectionGOList;
+    public List<GameObject> startLevelSectionList;
+    public List<GameObject> endLevelSectionList;
 }

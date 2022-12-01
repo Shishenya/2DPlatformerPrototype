@@ -28,9 +28,9 @@ public abstract class Creatures : MonoBehaviour
     [HideInInspector] public WeaponAttackEvent weaponAttackEvent;
     [HideInInspector] public DeathEvent deathEvent;
 
-    #region
+    #region Weapon Creature
     [Space(10)]
-    [Header("Components Creature")]
+    [Header("Weapon Creature")]
     #endregion
     public GameObject weaponCreature;
 
@@ -42,8 +42,15 @@ public abstract class Creatures : MonoBehaviour
     public CreatureDetailsSO creatureDetails;
     public MovementDetailsSO movementDetails;
 
+    #region Referenves
+    [Space(10)]
+    [Header("References Objects")]
+    #endregion
+    public GameObject jumpPoint;
+
     // State
-    /*[HideInInspector]*/ public bool isJump = false;
+    /*[HideInInspector]*/
+    public bool isJump = false;
     public bool isIdle = false;
     public bool isMove = false;
     public bool isAttack = false;
@@ -70,6 +77,21 @@ public abstract class Creatures : MonoBehaviour
     public virtual void InitCreatures()
     {
 
+    }
+
+    private void Update()
+    {
+        CheckGroundUnderCreature();
+    }
+
+    private void CheckGroundUnderCreature()
+    {
+        RaycastHit2D hitDown = Physics2D.Raycast(jumpPoint.transform.position, Vector2.down);
+        // Debug.DrawRay(jumpPoint.transform.position, Vector2.down, Color.yellow, 3f);
+        if (hitDown.distance>Settings.distanceRaycastJump)
+        {
+            isJump = true;
+        }
     }
 
 }

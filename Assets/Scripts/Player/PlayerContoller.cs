@@ -92,7 +92,7 @@ public class PlayerContoller : MonoBehaviour
 
         Vector2 direction = new Vector2(_horizontalMovement, 0f);
 
-        if (Input.GetKeyDown(KeyCode.Space) && _creature.isGround)
+        if (Input.GetKeyDown(KeyCode.Space) && _creature.isGround && !_creature.isJump)
         {
             _jumpForce = _creature.movementDetails.jumpForce;
             _creature.jumpEvent.CallOnJumpEvent(_jumpForce, direction, _speed);
