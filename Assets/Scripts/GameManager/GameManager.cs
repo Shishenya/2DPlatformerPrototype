@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private EnemyFactory _enemyFactory;
     [SerializeField] private PlayerFactory _playerFactory;
 
+    public EnemyFactory enemyFactory { get => _enemyFactory;}
+
     #region Cinemachine
     [Space(10)]
     [Header("Cinemachine Reff")]

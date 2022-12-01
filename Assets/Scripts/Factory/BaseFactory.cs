@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseFactory : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] private protected GameObject _prefab;
 
     public virtual GameObject Create(Vector2 positionCreate)
     {
