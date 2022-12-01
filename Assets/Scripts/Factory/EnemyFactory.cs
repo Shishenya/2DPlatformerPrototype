@@ -10,7 +10,7 @@ public class EnemyFactory : BaseFactory
 
     public override GameObject Create(Vector2 positionCreate)
     {
-        GameObject go = Instantiate(_prefab, positionCreate, Quaternion.identity);
+        GameObject go = Instantiate(GetRandomPrefabByList(_prefabList), positionCreate, Quaternion.identity);
         float rnd = Random.Range(0f, 100f);
         if (rnd < chanceFollowPlayer)
         {

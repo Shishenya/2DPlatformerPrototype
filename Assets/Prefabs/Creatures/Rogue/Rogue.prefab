@@ -33,9 +33,9 @@ MonoBehaviour:
   health: {fileID: 0}
   weaponAttackEvent: {fileID: 0}
   deathEvent: {fileID: 0}
-  weaponCreature: {fileID: 0}
+  weaponCreature: {fileID: 6502409800514479344}
   creatureDetails: {fileID: 11400000, guid: 21e9b8adabe40b2488c15f9ec268a641, type: 2}
-  movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
+  movementDetails: {fileID: 11400000, guid: d9e5f6a7bb9be2f4b978be6b27fe7ce1, type: 2}
   jumpPoint: {fileID: 1427045353120053180}
   isJump: 0
   isIdle: 0
@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5536831489304881491, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: _contactDamageDetails
+      value: 
+      objectReference: {fileID: 11400000, guid: 41e9bdf7f8544814e851da1f3769b3a9, type: 2}
     - target: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Name
       value: Rogue
@@ -306,6 +310,11 @@ PrefabInstance:
 --- !u!1 &3832168567985282423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+  m_PrefabInstance: {fileID: 7630429559193184758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6502409800514479344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3736166911155014918, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
   m_PrefabInstance: {fileID: 7630429559193184758}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427045353120053180 stripped

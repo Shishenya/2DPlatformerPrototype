@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f786ba60ea0094fad28daa714b8ec7, type: 3}
-  m_Name: MovementDetails_Mage
+  m_Script: {fileID: 11500000, guid: 560308e09f00f01418574e00409f87a3, type: 3}
+  m_Name: ContactDamageDetails_WeaponRogue
   m_EditorClassIdentifier: 
-  speed: 3
-  jumpForce: 11
+  damage: 4
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256

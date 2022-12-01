@@ -46,7 +46,7 @@ MonoBehaviour:
   health: {fileID: 0}
   weaponAttackEvent: {fileID: 0}
   deathEvent: {fileID: 0}
-  weaponCreature: {fileID: 0}
+  weaponCreature: {fileID: 7926101115656043287}
   creatureDetails: {fileID: 11400000, guid: d35bdb91fb471004383e71879cf3b046, type: 2}
   movementDetails: {fileID: 11400000, guid: 9998a5525c40b214e8e4bd18aa54f2a1, type: 2}
   jumpPoint: {fileID: 2598572085982390363}
@@ -225,6 +225,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5905681027756182028, guid: 10e670b2d15fa6a45955ca3241e03ace, type: 3}
+    - target: {fileID: 3736166911155014918, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
       propertyPath: m_Name
       value: Mage
@@ -286,6 +290,11 @@ PrefabInstance:
 --- !u!1 &210684814854996624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6686194271591576705, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
+  m_PrefabInstance: {fileID: 6784289086870386193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7926101115656043287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3736166911155014918, guid: 1bb8a14279fdec944bc6e49244e9e428, type: 3}
   m_PrefabInstance: {fileID: 6784289086870386193}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2598572085982390363 stripped

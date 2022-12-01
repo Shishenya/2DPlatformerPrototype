@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f786ba60ea0094fad28daa714b8ec7, type: 3}
   m_Name: MovementDetails_Rogue
   m_EditorClassIdentifier: 
-  speed: 12
-  jumpForce: 7
+  speed: 6
+  jumpForce: 11
