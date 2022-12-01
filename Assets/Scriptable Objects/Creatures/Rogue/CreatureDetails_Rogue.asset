@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CreatureDetails_Rogue
   m_EditorClassIdentifier: 
   prefabCreature: {fileID: 3832168567985282423, guid: 6c4d7dbfab6c51a45b11ca29ae6ed88b, type: 3}
-  maxAmountHealth: 3
+  maxAmountHealth: 2
   ummunityAfterDamageSecond: 1

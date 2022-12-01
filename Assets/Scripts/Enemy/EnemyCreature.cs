@@ -6,7 +6,7 @@ public class EnemyCreature : Creatures
 {
     public EnemyDetailsSO enemyDetailsSO;
 
-    #region
+    #region Attack parameters
     [Header("Attack parameters")]
     [Space(10)]
     #endregion

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -22,6 +23,13 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private CinemachineVirtualCamera _cinemachine;
 
     private GameObject _player; // игрок
+
+    #region Score
+    [Space(10)]
+    [Header("Score")]
+    #endregion
+    public TextMeshProUGUI scoreTMPUI;
+    private int _gameScore = 0;
 
 
     protected override void Awake()
@@ -64,6 +72,16 @@ public class GameManager : Singleton<GameManager>
     public GameObject GetPlayer()
     {
         return _player;
+    }
+
+
+    /// <summary>
+    /// Изменение UI для Score, не стал заморачиваться =)
+    /// </summary>
+    public void UpdateUiScore(int amount) {
+
+        _gameScore += amount;
+        scoreTMPUI.text = Settings.scoreText + _gameScore.ToString();
     }
 
 }

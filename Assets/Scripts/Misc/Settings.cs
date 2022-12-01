@@ -22,6 +22,8 @@ public static class Settings
     public static float distanceRaycastJump = 0.5f;
     #endregion
 
+    public static string scoreText = "Score: ";
+
     #region Useable parameters
     public static float distanceUseable = 1f;
     #endregion

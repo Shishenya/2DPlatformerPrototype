@@ -16,3 +16,4 @@ MonoBehaviour:
   isAlwaysFollowPlayer: 0
   enemyMeleeRange: 3.5
   enemyChanceAttackMelee: 50
+  scorePoint: 7

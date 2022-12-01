@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MovementDetails_Mage
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 11
+  jumpForce: 9

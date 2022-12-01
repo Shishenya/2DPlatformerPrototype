@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: CreatureDetails_Mage
   m_EditorClassIdentifier: 
   prefabCreature: {fileID: 210684814854996624, guid: 9e88f8aea51bf294ea01cf95e929af42, type: 3}
+  maxAmountHealth: 2
+  ummunityAfterDamageSecond: 2

@@ -31,7 +31,6 @@ public class JumpEnemyTrigger : MonoBehaviour
             float rnd = Random.Range(0f, 100f);
             if (rnd < _chanceJump)
             {
-                Debug.Log("Прыжок врага!");
                 EnemyCreature enemyCreature = collision.gameObject.GetComponent<EnemyCreature>();
                 enemyCreature.jumpEvent.CallOnJumpEvent(enemyCreature.movementDetails.jumpForce, Vector2.zero, _jumpForceVertical);
             }

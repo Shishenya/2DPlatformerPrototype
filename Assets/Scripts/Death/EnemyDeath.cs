@@ -10,6 +10,11 @@ public class EnemyDeath : Death
     public override void DeathCreature()
     {
         base.DeathCreature();
+
+        // Изменение очков за убийство
+        int amount = GetComponent<EnemyCreature>().enemyDetailsSO.scorePoint;
+        GameManager.Instance.UpdateUiScore(amount);
+
         StartCoroutine(DeathRoutine());
     }
 
