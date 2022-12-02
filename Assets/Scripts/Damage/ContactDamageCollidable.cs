@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ContactDamageCollidable : MonoBehaviour
 {
 
-    [SerializeField] private ContactDamageDetailsSO _contactDamageDetails;    
+    [SerializeField] private ContactDamageDetailsSO _contactDamageDetails;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +14,6 @@ public class ContactDamageCollidable : MonoBehaviour
                 if (!collision.gameObject.GetComponent<ImmunityAfterDamage>().IsImmunityAfterDamage)
                 {
                     TakeContactDamage(collision);
-                    //Debug.Log(collision.gameObject.name + " нанес контактный урон TRIGGER " + gameObject.name);
                 }
                 else
                 {
@@ -26,10 +23,7 @@ public class ContactDamageCollidable : MonoBehaviour
             else
             {
                 TakeContactDamage(collision);
-                //Debug.Log(collision.gameObject.name + " нанес контактный урон TRIGGER " + gameObject.name);
             }
-
-
 
             #region Layer MASK!
             // переделать под layer mask
@@ -43,8 +37,8 @@ public class ContactDamageCollidable : MonoBehaviour
     /// </summary>
     private void TakeContactDamage(Collider2D collision)
     {
-        // Debug.Log(collision.gameObject.name + " нанес контактный урон " + gameObject.name);
-        collision.gameObject.GetComponent<Creatures>().changeHeatlhEvent.CallOnChangeHealthEvent(_contactDamageDetails.damage);
+        if (collision.gameObject.GetComponent<Creatures>() != null)
+            collision.gameObject.GetComponent<Creatures>().changeHeatlhEvent.CallOnChangeHealthEvent(_contactDamageDetails.damage);
     }
 
 }

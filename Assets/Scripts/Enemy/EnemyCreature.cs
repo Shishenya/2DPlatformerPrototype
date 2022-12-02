@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCreature : Creatures
@@ -62,7 +61,7 @@ public class EnemyCreature : Creatures
     private IEnumerator EnemyAttackRouitine()
     {
         isAttack = true;
-        // Debug.Log("Я враг " + name + ", я атакую");
+
         float _horizontalMovement = 0f;
         AimDirection direction = Utilites.LookAtPlayer(transform);
         weaponAttackEvent.CallWeaponAttackEvent(0, direction, _horizontalMovement);

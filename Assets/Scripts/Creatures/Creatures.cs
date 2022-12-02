@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-// [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(IdleEvent))]
 [RequireComponent(typeof(MoveEvent))]
 [RequireComponent(typeof(JumpEvent))]
@@ -69,14 +66,6 @@ public abstract class Creatures : MonoBehaviour
         health = GetComponent<Health>();
         weaponAttackEvent = GetComponent<WeaponAttackEvent>();
         deathEvent = GetComponent<DeathEvent>();
-    }
-
-    /// <summary>
-    /// Инициализация существа
-    /// </summary>
-    public virtual void InitCreatures()
-    {
-
     }
 
     private void Update()

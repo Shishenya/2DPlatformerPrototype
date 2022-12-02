@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Death : MonoBehaviour
@@ -27,7 +26,6 @@ public class Death : MonoBehaviour
     /// </summary>
     private void DeathEvent_OnDeath()
     {
-        // Debug.Log(name + " death! ");
         DeathCreature();
     }
 

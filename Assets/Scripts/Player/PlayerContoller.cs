@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerContoller : MonoBehaviour
@@ -60,7 +59,7 @@ public class PlayerContoller : MonoBehaviour
 
         if (_creature.isJump) return;
 
-        // Пока включу, но на самом деле в игре можно и оставить
+        // Пока выключу, но на самом деле в игре можно и оставить
         // if (!_creature.isGround) return;
 
         if (_creature.isAttack)

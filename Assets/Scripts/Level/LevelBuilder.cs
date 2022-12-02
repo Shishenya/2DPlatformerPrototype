@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,7 +59,6 @@ public class LevelBuilder : Singleton<LevelBuilder>
     /// <summary>
     /// Достает случайную секцию
     /// </summary>
-    /// <returns></returns>
     private GameObject GetRandomLevelSection(List<GameObject> sectionSpawn)
     {
         if (curentLevelDetails != null)
